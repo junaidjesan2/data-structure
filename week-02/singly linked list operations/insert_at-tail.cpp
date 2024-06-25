@@ -47,7 +47,7 @@ int main()
     {
         cout << endl;
         cout << "option 1: Insert at Tail" << endl;
-        cout << "option 2: Give a value" << endl;
+        cout << "option 2: Show Results" << endl;
         cout << "option 3: break the list" << endl;
         int op;
         cin >> op;
