@@ -49,8 +49,8 @@ void insert_at_tail(Node *&head, Node *&tail, int v)
 // }
 void min_max(Node *head)
 {
-    int max = INT_MAX;
-    int min = INT_MIN;
+    int min = INT_MAX;
+    int max = INT_MIN;
     Node *tmp = head;
     while (tmp != NULL)
     {
