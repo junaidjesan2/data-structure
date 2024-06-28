@@ -4,7 +4,7 @@ using namespace std;
 class Node
 {
 public:
-    int val;
+    long int val;
     Node *next;
 
     Node(int val)
@@ -62,6 +62,30 @@ int count(Node *head)
     }
     return val;
 }
+void element_same(Node *head, Node *head1)
+{
+    Node *tem = head;
+    Node *tem1 = head1;
+    int res = 1;
+    while (tem != NULL && tem1 != NULL)
+    {
+        if (tem->val != tem1->val)
+        {
+            cout << "NO";
+            return;
+        }
+        tem = tem->next;
+        tem1 = tem1->next;
+    }
+    if (tem == NULL && tem1 == NULL)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+}
 int main()
 {
     Node *head = NULL;
@@ -72,14 +96,12 @@ int main()
     while (true)
     {
         cin >> v;
-        if (v == 0)
+        if (v == -1)
         {
             break;
         }
         insert_at_tail(head, tail, v);
     }
-    cout << endl
-         << endl;
     while (true)
     {
         cin >> v1;
@@ -89,19 +111,11 @@ int main()
         }
         insert_at_tail1(head1, tail1, v1);
     }
-    // cout << "First linked List: ";
-    // linkedList(head);
-    // cout << endl
-    //      << endl;
-    // cout << "Second Linked List: ";
-    // linkedList(head1);
-    cout << endl
-         << endl;
     int ar1 = count(head);
     int ar2 = count(head1);
     if (ar1 == ar2)
     {
-        cout << "YES" << endl;
+        element_same(head, head1);
     }
     else
     {
