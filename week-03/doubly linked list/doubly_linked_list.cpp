@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Node
+{
+public:
+    int val;
+    Node *next;
+    Node *previous;
+
+    Node(int val)
+    {
+        this->val = val;
+        this->next = NULL;
+        this->previous = NULL;
+    }
+};
+void print_list(Node *head)
+{
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+}
+void print_reverse(Node *tail)
+{
+    Node *back = tail;
+    while (back != NULL)
+    {
+        cout << back->val << " ";
+        back = back->previous;
+    }
+    cout << endl;
+}
+int main()
+{
+    Node *a = new Node(10);
+    Node *b = new Node(20);
+    Node *c = new Node(30);
+    Node *d = new Node(40);
+    Node *tail = d;
+
+    a->next = b;
+    b->previous = a;
+    b->next = c;
+    c->previous = b;
+    c->next = d;
+    d->previous = c;
+    print_list(a);
+    print_reverse(tail);
+
+    return 0;
+}
