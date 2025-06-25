@@ -1,3 +1,8 @@
-found
-found
-not found
+14
+3
+4
+7
+10
+12
+1
+18
