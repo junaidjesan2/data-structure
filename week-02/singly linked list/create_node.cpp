@@ -1,24 +1,25 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node
 {
-    public:
-        int val;
-        Node* next;
-    
+public:
+    int val;
+    Node *next;
+
     Node(int val)
     {
-        this->val=val;
-        this->next=NULL;
+        this->val = val;
+        this->next = NULL;
     }
 };
-
 int main()
-{  
-    Node a(10);
-    Node b(30);
-    a.next=&b;
-    cout<<a.val<<endl;
+{
+    Node *head = new Node(10);
+    Node *B = new Node(10);
+
+    head->next = B;
+
+    cout << head->val;
     return 0;
 }
