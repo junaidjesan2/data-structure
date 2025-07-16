@@ -14,20 +14,21 @@ public:
         this->right = NULL;
     }
 };
-void inser_at_head(Node *&head, Node *&tail, int val)
+
+void printDoublyLinkedList(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (head == NULL)
     {
         head = newNode;
         tail = newNode;
-        return;
     }
-    head->left = newNode;
-    newNode->right = head;
-    head = newNode;
+    tail->right = newNode;
+    newNode->left = tail;
+    // newNode->right = NULL;
+    tail = newNode;
 }
-void print_list(Node *&head)
+void printList(Node *head)
 {
     while (head != NULL)
     {
@@ -45,8 +46,8 @@ int main()
         cin >> val;
         if (val == -1)
             break;
-        inser_at_head(head, tail, val);
+        printDoublyLinkedList(head, tail, val);
     }
-    print_list(head);
+    printList(head);
     return 0;
 }
